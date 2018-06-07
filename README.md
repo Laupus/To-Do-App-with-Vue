@@ -11,7 +11,7 @@ to clear these tasks at any time.
 localStorage.removeItem('todo_list');
 ```
 
-- A bit of responsivity.
+- A bit of responsiveness.
 
 - It's purple, I guess.
 
