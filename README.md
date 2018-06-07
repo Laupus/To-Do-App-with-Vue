@@ -1,2 +1,2 @@
-# To-Do-App-with-Vue
+# TODO-App-Vue
 To-Do App made with Vue.js
