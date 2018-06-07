@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue.js To-Do list</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <div id="app" class="mt-5">
+    <div class="container col-xs-3">
+      <main class="wrapper mx-auto">
+        <h1 class="card-title">{{ today.day }}<br>{{ today.date }}</h1>
+        <div class="form-inline text-center w-100" style="display: inline-block;">
+          <form @keydown.enter.prevent="" @click.prevent="">
+            <input type="text" class="todo form-control mt-2" style="width: 80%;"v-bind:class="{ new_todo }" placeholder="What do you want to do today?" v-model="new_todo" v-on:keyup.enter="addTask">
+            <button type="button" class="btn btn-primary mt-2" style="width: 18%; font-size:1.1rem;" v-bind:class="{ new_todo }"  @click="addTask">Add</button>
+          </form>
+        </div>
+
+        <div class="control-buttons text-center mt-2 mb-4">
+          <button type="button" class="btn btn-outline-info" v-if="todoList.length > 0" @click="removeLatest()">Remove</button>
+          <button type="button" class="btn btn-outline-info" v-if="todoList.length > 0" @click="clearAll">Clear</button>
+        </div>
+
+        <div>
+          <p class="font-weight-bold" v-if="todoList.length > 0">You have {{ todoList.length }} unfinished task<span v-if="todoList.length > 1">s</span></p>
+          <transition-group name="todo-task" tag="ul" class="todo-list">
+            <li v-for="(task, index) in todoList" v-bind:key="task.title">
+              <label v-bind:for="'task' + task.id"></label>
+              <span class="delete" @click="deleteTask(task)"></span>
+              <span>{{ task.title }}</span>
+            </li>
+          </transition-group>
+        </div>
+        <p class="text-center font-weight-bold" v-if="todoList.length == 0"><img src="./resources/party-time-resized.png" alt="celebration"><br/>You have nothing left to do. Congrats on the free time!</p>
+      </main>
+    </div>
+  </div>
+
+  <footer class="footer">
+    Made by Pawel Kwiecinski<br>
+    View on <a href="https://github.com/Laupus">Github</a>
+  </footer>
+
+  <script type 'text/javascript' src='https://unpkg.com/vue@2.5.16/dist/vue.js'></script>
+  <script type='text/javascript' src='./app.js'></script>
+</body>
+</html>
