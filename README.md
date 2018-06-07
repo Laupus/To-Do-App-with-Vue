@@ -13,4 +13,4 @@ localStorage.removeItem('todo_list');
 
 ### Built with:
 - [Vue.js](https://vuejs.org/) 2.5.16
-- ]Bootstrap](https://getbootstrap.com/) 4.1.1
+- [Bootstrap](https://getbootstrap.com/) 4.1.1
