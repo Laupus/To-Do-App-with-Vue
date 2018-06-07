@@ -1,2 +1,16 @@
-# TODO-App-Vue
-To-Do App made with Vue.js
+# It's a TODO App, made with Vue.js!
+Never again forget stuff you need to do, ever.
+
+This tiny app is pleasant to the eye, until you look at how much stuff you still have to do!
+
+### Features:
+Storing task list in local storage to keep them piling up, with a ready-to-use function
+to clear these tasks at any time.
+
+```
+localStorage.removeItem('todo_list');
+```
+
+### Built with:
+- Vue 2.5.16
+- Bootstrap 4.1.1
