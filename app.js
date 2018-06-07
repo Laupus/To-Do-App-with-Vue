@@ -10,7 +10,7 @@ new Vue({
   },
   created() {
     // Uncomment for rerunning purposes
-    // localStorage.clear();
+    // localStorage.removeItem('todo_list');
     this.getTodos();
   },
   watch: {
