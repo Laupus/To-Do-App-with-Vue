@@ -11,6 +11,10 @@ to clear these tasks at any time.
 localStorage.removeItem('todo_list');
 ```
 
+A bit of responsivity.
+
+It's purple, I guess.
+
 ### Built with:
 - [Vue.js](https://vuejs.org/) 2.5.16
 - [Bootstrap](https://getbootstrap.com/) 4.1.1
